@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+{% if user.is_authenticated %}
+<link rel="stylesheet" type="text/css" href="{% static 'planner/css/styles.css' %}">
+<div class="col-md-8 offset-md-2">
+    <h1>Calendar</h1>
+    <div class="clearfix">
+        <a class="btn btn-info left" href="{% url 'planner:calendar' %}?{{ prev_month }}"> Previous Month </a>
+        <a class="btn btn-info right" href="{% url 'planner:calendar' %}?{{ next_month }}"> Next Month </a>
+        <a class="btn btn-info right" href="{% url 'planner:event_new' %}"> New Event </a>
+    </div>
+    
+    {{ calendar }}
+</div>
+{% else %}
+    ERROR! Pentru a accesa aceasta sectiune trebuie sa fiti autentificat.
+{% endif %}
+{% endblock %}

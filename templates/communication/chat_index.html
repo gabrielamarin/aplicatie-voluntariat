@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Chat Rooms{% endblock %}
+
+{% block page_content %}
+{% if user.is_authenticated %}
+    Care este numele evenimentului despre care vrei sa discutam?<br>
+    <input id="room-name-input" type="text" size="100"><br>
+    <input id="room-name-submit" type="button" value="Sa inceapa discutia">
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = '/communication/' + roomName + '/';
+        };
+    </script>
+{% else %}
+ERROR! Pentru a accesa aceasta sectiune trebuie sa fiti autentificat.
+{% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<div class="col-md-8 offset-md-2">
+    <h1>Descriere</h1>
+    <hr>
+    <h5>Dacă eşti pasionat de evenimente, lucru în echipă, muzică bună şi amator de distracţie, atunci află că ai ajuns în locul potrivit! Suntem în căutare de oameni dispuși sa ne ofere puțin din timpul lor prețios pentru a ajuta la crearea celor mai frumoase evenimente.</h5>
+    <br>
+    <h1>Blog</h1>
+    <hr>
+    <h5>Articole care merită citite pentru a descoperi cât de interesantă este experiența participând la evenimente alături de noi</h5><br><br>
+    {% for post in posts %}
+    <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+    <small>
+        {{ post.created_on.date }} |&nbsp;
+        Categorie:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <p>{{ post.body | slice:":400" }}...</p>
+    {% endfor %}
+</div>
+{% endblock %}

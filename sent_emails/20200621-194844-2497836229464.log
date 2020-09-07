@@ -1,0 +1,26 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on localhost:8080
+From: webmaster@localhost
+To: gabrielamihaelamarin@gmail.com
+Date: Sun, 21 Jun 2020 16:48:44 -0000
+Message-ID: 
+ <159275812442.18068.10079691389848658039@DESKTOP-7CGIOMB.Speedport_W_724V_09081601_00_041>
+
+
+You're receiving this email because you requested a password reset for your user account at localhost:8080.
+
+Please go to the following page and choose a new password:
+
+http://localhost:8080/accounts/reset/MQ/5hj-5b5a6bb94f2be0994c80/
+
+Your username, in case you’ve forgotten: gabrielamarin
+
+Thanks for using our site!
+
+The localhost:8080 team
+
+
+
+-------------------------------------------------------------------------------

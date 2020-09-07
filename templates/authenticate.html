@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block user_status %}
+    {% if user.is_authenticated %}
+    Bine ai venit {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Deconectare</a></p>
+    <p><a href="{% url 'password_reset' %}">Resetare parola</a></p>
+    {% else %}
+    <p>Utilizatorul nu este autentificat</p>
+    <a href="{% url 'login' %}">Autentificare</a>
+    {% endif %}
+{% endblock %}
