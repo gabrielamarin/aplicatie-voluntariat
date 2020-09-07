@@ -21,12 +21,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('', TemplateView.as_view(template_name='homepage.html'), name='homepage'),
-    path('projects/', include('projects.urls')), # remove?
-    path('blog/', include('blog.urls')), # remove?
+    path('blog/', include('blog.urls')),
     # path('blog/', TemplateView.as_view(template_name='blog_index.html'), name='blog_index'),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    # path('profile/', include('django.contrib.auth.urls')),
     path('planner/', include('planner.urls')),
     path('communication/', include('communication.urls')),
 ]

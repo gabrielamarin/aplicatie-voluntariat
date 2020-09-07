@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig', #Authentication app
     'homepage',
-    'projects',
     'blog',
     'planner.apps.PlannerConfig',
     'channels',
